@@ -31,30 +31,22 @@ function ContactUs() {
   return (
     <div className={css(styles.container)}>
         <h2>CONTACT US HERE AT SARAH'S ART GALLERY</h2>
-        <form onSubmit={handleSubmit}>
-          <div className={css(styles.labelContainer)}>
+        <form className={css(styles.form)} onSubmit={handleSubmit}>
           <label className={css(styles.label)}>Name*
             <input type="name" name="name" value={contactState.name} onChange={handleContactState} className={css(styles.input)} />
           </label>
-          </div>
           <br />
-          <div className={css(styles.labelContainer)}>
           <label className={css(styles.label)}>Email*
             <input type="email" name="email" value={contactState.email} onChange={handleContactState} className={css(styles.input)} />
           </label>
-          </div>
           <br />
-          <div className={css(styles.labelContainer)}>
           <label className={css(styles.label)}>Phone*
             <input type="number" name="phone" value={contactState.phone} onChange={handleContactState} className={css(styles.input)} />
           </label>
-          </div>
           <br />
-          <div className={css(styles.labelContainer)}>
           <label className={css(styles.label)}>Message*
             <textarea name='message' cols={10} rows={10} value={contactState.message} onChange={handleContactState} className={css(styles.textarea)}></textarea>
           </label>
-          </div>
           {error && <p className={css(styles.error)}>{error}</p>}
           <button type='submit' className={css(styles.button)}>SEND</button>
         </form>
@@ -63,20 +55,28 @@ function ContactUs() {
 }
 
 const styles = StyleSheet.create({
-  labelContainer: {
+  form: {
     display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: '20px',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '50%',
+    margin: '0 auto',
+    marginTop: '50px',
+    padding: '20px',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
   },
   container: {
     textAlign: 'center',
     fontFamily: 'Arial, sans-serif',
   },
   label: {
-    float: 'left',
     display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
     width: '21%',
-    marginRight: '5%',
+    marginRight: '75%',
     lineHeight: '1.6em'
   },
   input: {
