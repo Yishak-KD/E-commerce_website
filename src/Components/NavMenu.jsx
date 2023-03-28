@@ -12,18 +12,10 @@ function NavMenu({ handleMenuClose }) {
               <img src={CloseButton} alt="" height="25px" width="25px"/>
           </button>
             <ul className={css(style.ulItems)}>
-              {/* <li className={css(style.listItem)}> */}
                 <Link to='/' className={css(style.listItem)}>HOME</Link>
-              {/* </li> */}
-              {/* <li className={css(style.listItem)}> */}
                 <Link to='/shop' className={css(style.listItem)}>SHOP</Link>
-              {/* </li> */}
-              {/* <li className={css(style.listItem)}> */}
                 <Link to="/about" className={css(style.listItem)}>ABOUT</Link>
-              {/* </li> */}
-              {/* <li className={css(style.listItem)}> */}
                 <Link to="/contactus" className={css(style.listItem)}>CONTACT US</Link>
-              {/* </li> */}
             </ul>
           </nav>
     </div>
@@ -33,18 +25,20 @@ function NavMenu({ handleMenuClose }) {
 const style = StyleSheet.create({
     menu: {
         backgroundColor:'transparent',
-        height: '100vh',
+        height: 'auto',
         color: 'white'
     },
     listItem: {
-    margin: '10px 0',
-    padding: '10px',
-    fontSize: '50px',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease-in-out',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+        margin: '10px 0',
+        padding: '10px',
+        fontSize: '50px',
+        cursor: 'pointer',
+        transition: 'all 0.3s ease-in-out',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textDecoration: 'none',
+        color: "white",
 },
     ulItems: {
         alignItems: 'center',
@@ -64,7 +58,8 @@ const style = StyleSheet.create({
         // top: '10px',
         // right: '10px',
         // transform: 'translateY(-50%)',
-        position: 'fixed'
+        position: 'fixed',
+        color: 'white'
     },
 })
 
