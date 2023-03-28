@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { StyleSheet, css } from "aphrodite";
+import NavMenu from "./NavMenu";
+import ListButton from "./ListButton";
+import sarahLogo from '../assets/bin.png';
+import backgroundImage from '../assets/wallD.jpg'
+import Footer from "./Footer";
 
 function ContactUs() {
   const [contactState, SetContactState] = useState({
@@ -9,6 +14,15 @@ function ContactUs() {
     message: "",
   });
   const [error, setError] = useState(null);
+  const [showMenu, setShowMenu] = useState(false)
+
+  const handleMenuOpen = () => {
+    setShowMenu(true)
+  }
+
+  const handleMenuClose = () => {
+    setShowMenu(false)
+  }
 
   const handleContactState = (event) => {
     const value = event.target.value;
@@ -34,47 +48,58 @@ function ContactUs() {
   };
   return (
     <div className={css(styles.container)}>
-      <h2>CONTACT US HERE AT SARAH'S ART GALLERY</h2>
-      <form className={css(styles.form)} onSubmit={handleSubmit}>
-        <label className={css(styles.label)}>Name*</label>
-        <input
-          type="name"
-          name="name"
-          value={contactState.name}
-          onChange={handleContactState}
-          className={css(styles.input)}
-        />
-        <label className={css(styles.label)}>Email*</label>
-        <input
-          type="email"
-          name="email"
-          value={contactState.email}
-          onChange={handleContactState}
-          className={css(styles.input)}
-        />
-        <label className={css(styles.label)}>Phone*</label>
-        <input
-          type="number"
-          name="phone"
-          value={contactState.phone}
-          onChange={handleContactState}
-          className={css(styles.input)}
-        />
-        <label className={css(styles.label)}>Message*</label>
-        <textarea
-          name="message"
-          cols={10}
-          rows={10}
-          value={contactState.message}
-          onChange={handleContactState}
-          className={css(styles.textarea)}
-        ></textarea>
-        <br />
-        {error && <p className={css(styles.error)}>{error}</p>}
-        <button type="submit" className={css(styles.button)}>
-          SEND
-        </button>
-      </form>
+      {showMenu ? (
+        <NavMenu handleMenuClose={handleMenuClose} />
+      ) : (
+        <div>
+          <img className={css(styles.sLogo)} src={sarahLogo} alt="" />
+          <ListButton handleMenuOpen={handleMenuOpen} />
+          <div className={css(styles.body)}>
+            <h2>CONTACT US HERE AT SARAH'S ART GALLERY</h2>
+            <form className={css(styles.form)} onSubmit={handleSubmit}>
+              <label className={css(styles.label)}>Name*</label>
+              <input
+                type="name"
+                name="name"
+                value={contactState.name}
+                onChange={handleContactState}
+                className={css(styles.input)}
+              />
+              <label className={css(styles.label)}>Email*</label>
+              <input
+                type="email"
+                name="email"
+                value={contactState.email}
+                onChange={handleContactState}
+                className={css(styles.input)}
+              />
+              <label className={css(styles.label)}>Phone*</label>
+              <input
+                type="number"
+                name="phone"
+                value={contactState.phone}
+                onChange={handleContactState}
+                className={css(styles.input)}
+              />
+              <label className={css(styles.label)}>Message*</label>
+              <textarea
+                name="message"
+                cols={10}
+                rows={10}
+                value={contactState.message}
+                onChange={handleContactState}
+                className={css(styles.textarea)}
+              ></textarea>
+              <br />
+              {error && <p className={css(styles.error)}>{error}</p>}
+              <button type="submit" className={css(styles.button)}>
+                SEND
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+      <Footer />
     </div>
   );
 }
@@ -93,13 +118,26 @@ const styles = StyleSheet.create({
   container: {
     textAlign: "center",
     fontFamily: "Arial, sans-serif",
-    backgroundColor: 'beige'
+    backgroundColor: 'beige',
+    position: 'relative',
+    width: '100%',
+    height: '400px',
+    objectFit: 'cover',
+    backgroundImage: `url(${backgroundImage})`, 
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 100%',
+
   },
   label: {
     display: "flex",
     alignItems: "center",
     textAlign: "right",
     margin: '0 50px'
+  },
+  body: {
+    backgroundColor: 'beige',
+    marginTop: '-134px',
+    paddingTop: '20px'
   },
   input: {
     backgroundColor: 'transparent',
@@ -137,6 +175,13 @@ const styles = StyleSheet.create({
     color: "red",
     marginLeft: '-300px'
   },
+  sLogo: {
+        padding: '5px 5px',
+        margin: '-10px 30px',
+        backgroundColor: 'transparent',
+        height: '500px',
+        width: '500px',
+    },
 });
 
 export default ContactUs;
