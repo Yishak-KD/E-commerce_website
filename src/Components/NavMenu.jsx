@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function NavMenu({ handleMenuClose }) {
   return (
-    <div>
+    <div className={css(style.container)}>
         <nav className={css(style.menu)}>
               <button className={css(style.buttonClose)} onClick={handleMenuClose}>
               <img src={CloseButton} alt="" height="25px" width="25px"/>
@@ -23,13 +23,18 @@ function NavMenu({ handleMenuClose }) {
 }
 
 const style = StyleSheet.create({
+    container: {
+        minHeight: '100vh',
+        backgroundColor: '#363945',
+        marginTop: '-30px'
+    },
     menu: {
         backgroundColor:'transparent',
         height: 'auto',
         color: 'white'
     },
     listItem: {
-        margin: '10px 0',
+        margin: '30px 0',
         padding: '10px',
         fontSize: '50px',
         cursor: 'pointer',
@@ -43,23 +48,21 @@ const style = StyleSheet.create({
     ulItems: {
         alignItems: 'center',
         justifyContent: 'center',
-        display: 'block'
+        display: 'block',
+        paddingTop: '10px'
     },
     buttonClose: {
         display: 'flex',
-        padding: '40px 50px',
-        // margin: '20px 20px',
+        margin: '50px 1200px',
+        padding: '10px 10px',
         fontSize: '16px',
         fontWeight: 'bold',
-        backgroundColor: 'transparent',
         border: 'none',
         borderRadius: '4px',
         cursor: 'pointer',
-        // top: '10px',
-        // right: '10px',
-        // transform: 'translateY(-50%)',
-        position: 'fixed',
-        color: 'white'
+        position: 'absolute',
+        color: 'white',
+        backgroundColor: 'white'
     },
 })
 

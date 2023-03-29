@@ -1,0 +1,33 @@
+Home page includes:
+
+1. Navigation menu
+2. MyComponent
+3.
+
+<!-- Questions to Chatgpt -->
+
+I want to create a simple shop component in react, I want to include 2 items of both are art work's for sale. I want to display both of this items with pictures, and below I want to put price. the first price is 200ETB and the second price is 400ETB. I want to grab every information that users put on the UI using react redux
+
+                <!-- Analysis On My Final Portfolio Project -->
+
+<!-- Mock API -->
+
+Assuming you want to post somethings in your Backend. Look for MockAPI
+
+<!-- Dribbble.com -->
+
+A site like a P-Interest where you will be able to find different picture ideas.
+
+<!-- API For Galleries -->
+
+Find some Gallery API to fetch some pictures and do some stuffs from it.
+
+<!-- Readme File request -->
+
+Write a beautiful and detailed README file. SO i am building A simple react web project. And it is based on an art gallery. it is called Sarah Art Gallery. This project Includes 4 navigation menu. Home, About, Contact us and Shop. whenever a user clicks on one of the item he/she will be redirected to the page.
+
+I used react router dom for routing, CSS Aphrodite for styling. and Also I have used react hooks like states and managed a simple states with this. Inside the contact us users will be able to insert their name, email, phone and send a message. Inside this project i have a page called shop where users will be able to see Sarah's work and order their desired item online. but here the backend will be configured very soon plus for the contact us I will include a DB, or Create some API to make a POST requests.
+
+This is a simple e-commerce website where users see the work of an individual artist.
+
+with all this details I want you to write for me a very beautiful and detailed Readme file for my GitHub

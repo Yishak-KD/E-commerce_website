@@ -13,14 +13,13 @@ function Footer() {
 
 const style = StyleSheet.create({
     footer: {
-        backgroundColor: '#f7f7f7', 
-        padding: '20px',
-        position: 'absolute', 
+        backgroundColor: '#333333', 
+        padding: '20px 0',
         textAlign: 'center',
-        bottom: '0',
-        left: 0,
-        right: 0,
-        margin: 'auto'
+        margin: 'auto',
+        bottom: 0,
+        width: '100%',
+        color: 'white'
     },
     para: {
         margin: '0'
