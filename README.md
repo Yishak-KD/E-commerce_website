@@ -2,11 +2,11 @@
 Sarah Art Gallery is a simple React web project based on an art gallery that showcases the artwork of Sarah, a talented artist from Minnesota, USA. The project includes four navigation menu options: Home, About, Contact Us, and Shop. Each of these options redirects the user to a different page.
 
 ## Table of Contents
-* Getting Started
-* Features
-* Technologies Used
-* Contributing
-* License
+# <u>**Getting started**</u>
+# <u>**Features**</u>
+# <u>**Technologies Used**</u>
+# <u>**Contributing**</u>
+# <u>**License**</u>
 ## Getting Started
 To get started with Sarah Art Gallery, you will need to have Node.js installed on your machine. Once you have Node.js installed, you can follow these steps to run the project:
 
