@@ -24,7 +24,7 @@ The Sarah Art Gallery website includes the following features:
 * Contact Us Page: The contact us page allows the user to submit a message to Sarah by providing their name, email, phone number, and message.
 * Shop Page: The shop page displays some of Sarah's artwork and allows the user to order their desired item online.
 ## Technologies Used
-The Sarah Art Gallery website was built using the following technologies:
+Sarah Art Gallery website was built using the following technologies:
 
 * React: The website was built using React, a popular JavaScript library for building user interfaces.
 * React Router Dom: React Router Dom was used for routing within the website.
