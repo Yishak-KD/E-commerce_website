@@ -40,11 +40,9 @@ const style = StyleSheet.create({
         backgroundColor: '#f8f8ff',
         display: 'flex',
         justifyContent: 'space-between',
-        // margin: '35px 35px'
         padding: '0px 60px'
     },
     Arts: {
-        // backgroundColor: 'red',
         padding: '50px 50px'
     },
     header: {
