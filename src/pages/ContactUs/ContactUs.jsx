@@ -178,7 +178,6 @@ const styles = StyleSheet.create({
   sLogo: {
         padding: '17px 17px',
         margin: '-40px 0 0 -700px',
-        // backgroundColor: 'transparent',
         height: '500px',
         width: '500px',
     },
