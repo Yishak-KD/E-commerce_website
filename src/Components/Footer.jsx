@@ -19,7 +19,8 @@ const style = StyleSheet.create({
         margin: 'auto',
         bottom: 0,
         width: '100%',
-        color: 'white'
+        // color: 'white',
+
     },
     para: {
         margin: '0'
