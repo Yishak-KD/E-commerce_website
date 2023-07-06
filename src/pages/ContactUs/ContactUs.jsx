@@ -44,6 +44,13 @@ function ContactUs() {
     } else {
       setError(null);
       console.log(contactState);
+      // fetch('/',{
+      //   method:'post',
+      //   headers:{
+      //     'content-type':"application/json"
+      //   },
+      //   body:contactState
+      // })
     }
   };
   return (

@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: '3rem',
     },
+
     paragraph: {
         padding: '0px 110px',
         color: 'black',
@@ -29,6 +30,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         lineHeight: '1.5em',
     },
+    
     body: {
       padding: '-50px 30px',
       backgroundColor: '#f8f8ff',
