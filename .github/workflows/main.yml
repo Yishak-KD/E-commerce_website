@@ -1,45 +1,30 @@
-name: Deploy to Google Cloud Run
-
+# .github/workflows/deploy.yml
+name: Deploy to Cloud Run
 on:
   push:
     branches:
       - main
-
+env:
+  PROJECT_ID: aevue-com
+  RUN_REGION: us-central1
+  SA_KEY_JSON: ${{ secrets.GCP_SA_KEY }}
 jobs:
   deploy:
+    name: Deploy to Cloud Run
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0.2.0
+      # Setup gcloud CLI
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
-          project_id: aevue-com
+          version: "290.0.1"
           service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
+          project_id: aevue-com
 
-      - name: Configure Docker for GCP
-        run: gcloud auth configure-docker
+      # Build and push image to Google Container Registry
+      - name: Build
+        run: gcloud builds submit --tag gcr.io/aevue-com/aevue-com:$GITHUB_SHA
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: gcr.io/aevue-com/aevue-com:latest
-          build-args: |
-            HTTP_PORT=3000
-
-      - name: Deploy to Cloud Run
-        uses: google-github-actions/deploy-cloudrun@v0.4.0
-        with:
-          image: gcr.io/aevue-com/aevue-com:latest
-          service: aevue
-          region: us-central1
-          platform: managed
-          allow-unauthenticated: true
-          env: |
-            FOO=bar
-            ZIP=zap
+      - name: Deploy
+        run: gcloud run deploy aevue-com --image gcr.io/aevue-com/aevue-com:$GITHUB_SHA --platform managed --region $RUN_REGION
