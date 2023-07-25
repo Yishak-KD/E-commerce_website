@@ -1,6 +1,6 @@
 # Sarah Art Gallery
 
-Sarah Art Gallery is a simple React web project based on an art gallery that showcases the artwork of Sarah, a talented artist from Minnesota, USA. The project includes four navigation menu options: Home, About, Contact Us, and Shop. Each of these options redirects the user to a different page.
+Sarah Art Gallery is a simple React web project based on an art gallery that showcases an artwork. The project includes four navigation menu options: Home, About, Contact Us, and Shop. Each of these options redirects the user to a different page.
 
 ## Table of Contents
 
