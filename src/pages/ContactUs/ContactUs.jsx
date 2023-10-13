@@ -5,7 +5,6 @@ import ListButton from "../../Components/ListButton";
 import sarahLogo from '../../assets/bin.png';
 import backgroundImage from '../../assets/wallD.jpg'
 import Footer from "../../Components/Footer";
-// State file updated
 
 function ContactUs() {
   const [contactState, SetContactState] = useState({
